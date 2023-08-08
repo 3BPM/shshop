@@ -1,0 +1,12 @@
+<!-- 文章列表 -->
+
+
+<block wx:for="{{goodList}}">
+  <view class="good-box" bindtap="toadetail" data-id="{{item.id}}">
+    <text style="font-size: 38rpx; width: 100%;">{{item.title}}</text>
+    <view class="keyword_adddate">
+      <view class="keyword">{{item.keywords}}</view>
+      <text class="time">{{item.add_date}}</text>
+    </view>
+  </view>
+</block>

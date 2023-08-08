@@ -1,0 +1,13 @@
+<!--pages/login/login.wxml-->
+<!-- <text>pages/login/login.wxml</text> -->
+<!--index.wxml-->
+<view class="title">学工号</view>
+<input class="input" bindinput="getZhanghao" class="ipt"></input>
+<!-- <input name="price" value="{{price}}" type="number" class="ipt"/> -->
+
+<view class="title">密码</view>
+<input class="input" bindinput="getMima" class="ipt"></input>
+<view style="color: brown;text-align: right;margin-right: 20rpx;" wx:if="{{issignin}}">确认密码</view>
+
+<button bindtap="login" type="primary" wx:if="{{!issignin}}">登录</button>
+<button bindtap="signup" type="primary"  wx:if="{{issignin}}">注册</button>

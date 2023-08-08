@@ -1,0 +1,26 @@
+<!-- 搜索 -->
+<view class="search-wrap" bindtap="toSearch">
+  <view class="search-box">
+
+    <input bindinput="getValue" type="text" placeholder="请输入商品关键词" class="input-cell"/>
+    <view style="width:90rpx;background-color: rgb(41, 209, 55);height: 50rpx;border-radius: 7%;"bindtap="search">搜 索</view>
+
+  </view>
+</view>
+
+<view class="no-good" wx:if="{{goodList.length == 0}}">没有对应的商品</view>
+
+<block wx:for="{{goodList}}">
+  <view class="good-box" bindtap="toGoodDetail" data-id="{{item._id}}">
+    <image src="{{item.cover_pic}}" class="good-img"></image>
+
+    <view class="right-box">
+      <view>{{item.title}}</view>
+      <view class="right-bottom-box">
+      
+        <view class="price">￥{{item.price}}</view>
+      </view>
+    </view>
+
+  </view>
+</block>

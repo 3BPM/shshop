@@ -1,0 +1,98 @@
+/* 商品列表 */
+.good-box {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 20rpx 20rpx 20rpx;
+  align-items: center;
+  border-bottom: 6rpx solid #eeeeee;
+}
+.choose-img {
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 20rpx;
+}
+.good-img {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}
+.good-right {
+  display: flex;
+  flex-direction: column;
+  width: 470rpx;
+  height:150rpx;
+  justify-content: space-between;
+}
+.good-right-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.add-delete-img {
+  width: 50rpx;
+  height: 50rpx;
+}
+.type-good-num {
+  margin: 0 15rpx;
+}
+.good-price {
+  color: red;
+  font-size: 40rpx;
+}
+
+
+/* 底部tabbar样式 */
+.all-bottom-box {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: 100rpx;
+  background-color: #ffeeeb;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.all-choose-img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+}
+.all-bottom-left {
+  display: flex;
+  flex-direction: row;
+  color: #8f8f8f;
+  align-items: center;
+}
+.all-bottom-left-text {
+  margin-left:10rpx;
+}
+.all-bottom-right {
+  display: flex;
+  flex-direction: row;
+}
+.total-button {
+  padding: 0 70rpx;
+  background-color: #8060f4;
+  color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.total-price {
+  line-height: 100rpx;
+  margin-right: 40rpx;
+}
+.total-price-text {
+  font-size: 28rpx;
+  color: #000;
+}
+.total-price-tag {
+  font-size: 28rpx;
+  color: #8060f4;
+}
+.total-price-money {
+  font-size: 40rpx;
+  color: #8060f4;
+}

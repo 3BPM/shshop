@@ -1,0 +1,79 @@
+.type-box {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+}
+.type-left {
+  width: 290rpx;
+  background-color: rgb(250, 250, 250);
+  margin-right: 10rpx;
+}
+.type-left view{
+  text-align: center;
+  padding: 20rpx 0;
+}
+.type-ritht {
+  margin-top: 10rpx;
+}
+
+/* 商品样式 */
+.type-good-box {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 30rpx 0;
+}
+.type-good-img {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}
+.type-good-right {
+  width: 350rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.choose-num-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.bottom-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.choose-num-box image {
+  width: 50rpx;
+  height: 50rpx;
+}
+.type-good-title {
+  font-size: 36rpx;
+
+  /* 处理文字超出范围，限制文字显示 */
+  width: 350rpx;
+  /* height: 100rpx; */
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.type-good-tag {
+  color: #bbbbbb;
+  font-size: 28rpx;
+}
+.type-good-price {
+  color: red;
+  font-size: 36rpx;
+}
+.type-good-num {
+  margin: 0 15rpx
+}
+
+/* 选中分类时候的样式 */
+.choose-type {
+  background-color: #8060f4;
+  color: #fff;
+}

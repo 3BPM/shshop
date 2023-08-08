@@ -1,0 +1,74 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/add/add",
+    "pages/index/search/search",
+    "pages/index/funcPage/functions",
+    "pages/index/htmlpage/hp",
+    "pages/index/tianbao/tiaobao",
+    "pages/type/type",
+    "pages/cart/cart",
+    "pages/me/me",
+    "pages/order/order",
+    "pages/me/myOders/myOrders",
+    "pages/me/myOders/comment/comment",
+    "pages/me/collect/collect",
+    "pages/me/sellerOrders/sellerOrders",
+    "pages/me/myGoods/myGoods",
+    "pages/me/myGoods/edit/edit",
+    "pages/me/myArticle/myArticle",
+    "pages/login/login",
+    "pages/me/xiugai/xiugai"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#8060f4",
+    "navigationBarTitleText": "校园二手市场",
+    "navigationBarTextStyle": "white"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents",
+  "tabBar": {
+    "color": "#000",
+    "selectedColor": "#8060f4",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/images/home.png",
+        "selectedIconPath": "/images/home_yes.png"
+      },
+      {
+        "pagePath": "pages/type/type",
+        "text": "分类",
+        "iconPath": "/images/type.png",
+        "selectedIconPath": "/images/type_yes.png"
+      },
+      {
+        "pagePath": "pages/add/add",
+        "text": "发布",
+        "iconPath": "/images/add_no.png",
+        "selectedIconPath": "/images/add_yes.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "/images/cart.png",
+        "selectedIconPath": "/images/cart_yes.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "/images/me.png",
+        "selectedIconPath": "/images/me_yes.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  }
+}

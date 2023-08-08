@@ -1,0 +1,70 @@
+<view class="title">
+  地址信息（具体到宿舍楼和寝室号）:
+</view>
+
+<view class="add-address" bindtap="addAddress" wx:if="{{!address}}">
+  添加地址>
+</view>
+
+<view class="address-box" wx:if="{{address}}" bindtap="addAddress">
+  <view>
+    <view class="address-top">
+      <text class="name">{{name}}</text>
+      <text>{{phone}}</text>
+    </view>
+    <view>
+      {{address}}
+    </view>
+  </view>
+  <view class="address-right">
+    >
+  </view>
+</view>
+
+
+<view class="title">
+  购物明细:
+</view>
+
+<block wx:for="{{orderList}}">
+
+  <view class="good-box" bindtap="toGoodDetail" data-id="{{item._id}}">
+    
+    <image src="{{item.cover}}" class="good-img"></image>
+    <view class="good-right">
+      <view>{{item.title}}</view>
+      <view class="good-right-bottom">
+        <view class="good-price">￥{{item.price}}</view>
+        <view class="good-right-bottom">
+          <image src="/images/delete.png" class="add-delete-img" catchtap="reduce" data-index="{{index}}"></image>
+          <view class="type-good-num">{{item.number}}</view>
+          <image src='/images/add.png' class="add-delete-img"  catchtap="add" data-index="{{index}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</block>
+
+
+
+<view class="all-bottom-box">
+  <view class="all-bottom-left" bindtap="chooseAll">  
+    
+    <view class="all-bottom-left-text">共{{totalNumber}}件</view>
+  </view>
+  <view class="all-bottom-right">
+    <view class="total-price">
+      <text class="total-price-text">合计:</text>
+      <text class="total-price-tag">￥</text>
+      <text class="total-price-money">{{sum}}</text>
+    </view>
+    <view class="total-button" bindtap="addOrder">提交订单</view>
+  </view>
+</view>
+
+
+<input type="text" bindinput="getNote" class="note" placeholder="请输入备注"/>
+
+
+<view class="info">下单后可以在订单页面查看卖家联系方式</view>

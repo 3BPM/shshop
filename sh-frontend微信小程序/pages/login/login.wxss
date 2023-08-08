@@ -1,0 +1,25 @@
+/* pages/login/login.wxss */
+/* Dialog/BG_title+content+3 button */
+/* position: absolute;
+width: 336px;
+height: 260px;
+left: 3.06%;
+right: 3.61%;
+top: 27.44%;
+bottom: 39.23%;
+
+
+background: rgb(255, 255, 255),rgb(255, 255, 255); */
+
+.title {
+  margin: 20rpx;
+  color: #8060f4;
+}
+.ipt {
+  border: 1rpx solid rgb(165, 165, 165);
+  margin: 20rpx;
+}
+.text-area {
+  border: 1rpx solid rgb(165, 165, 165);
+  margin: 20rpx;
+}

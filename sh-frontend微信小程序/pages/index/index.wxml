@@ -1,0 +1,38 @@
+<!-- 搜索 -->
+<view class="search-wrap" bindtap="toSearch">
+  <view class="search-box">
+    <input type="text" placeholder="请输入商品关键词" class="input-cell" />
+
+  </view>
+</view>
+
+<!-- 轮播图 -->
+<view class="swiper-wrap">
+  <swiper class="swiper-box" indicator-dots='true' indicator-color='#fff' indicator-active-color="red" autoplay>
+    <block wx:for="{{bannerList}}">
+      <swiper-item>
+        <image bindtap="toBannerDetail" data-url="{{item.target_url}}" class="swiper-img" src="{{item.img}}">
+        </image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+
+<view class="type-item" bindtap="tofunc">
+  <!-- <view style="width:145rpx;background-color: rgb(252, 255, 97);height: 52rpx;border-radius: 7%; display: flex; display: flex;justify-content: center;  align-items: center;"></view> -->
+  <text>全部功能</text>
+</view>
+
+<!-- 商品列表 -->
+
+<block wx:for="{{goodList}}">
+  <view class="good-box" bindtap="toGoodDetail"  data-index="{{item}}">
+    <image src="http://116.63.12.26/{{item.cover_pic}}" class="good-img"></image>
+    <view class="right-box">
+      <view style="max-width: 500rpx;">{{item.spu.title}}</view>
+      <view class="right-bottom-box">
+        <view class="price">￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+</block>

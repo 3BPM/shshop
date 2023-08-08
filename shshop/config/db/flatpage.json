@@ -1,0 +1,107 @@
+[
+	{
+		"model": "flatpages.flatpage",
+		"pk": 1,
+		"fields": {
+			"url": "/about/",
+			"title": "关于我们",
+			"content": "<p style=\"text-align: left;\">如果对您有帮助，请我喝杯咖啡吧！</blockquote><p style=\"text-align: left;\">您的支持对我来说，也是非常重要哦，将有利于该项目的长久持续发展！</p><p><br></p><p> &nbsp; &nbsp;</p>",
+			"enable_comments": false,
+			"template_name": "",
+			"registration_required": false,
+			"sites": [
+				1
+			]
+		}
+	},
+	{
+		"model": "flatpages.flatpage",
+		"pk": 2,
+		"fields": {
+			"url": "/faq/after/",
+			"title": "售后说明",
+			"content": "<p> &nbsp; &nbsp; &nbsp; &nbsp;</p><p> &nbsp; &nbsp; &nbsp; &nbsp;</p><p>售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明售后说明</p><p> &nbsp; &nbsp;</p><p><br></p><p> &nbsp; &nbsp;</p><p><br></p><p> &nbsp; &nbsp;</p>",
+			"enable_comments": false,
+			"template_name": "",
+			"registration_required": false,
+			"sites": [
+				1
+			]
+		}
+	},
+	{
+		"model": "flatpages.flatpage",
+		"pk": 3,
+		"fields": {
+			"url": "/faq/pay/",
+			"title": "支付问题",
+			"content": "<p> &nbsp; &nbsp; &nbsp; &nbsp;</p><p> &nbsp; &nbsp; &nbsp; &nbsp;</p><p>支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题支付问题</p><p> &nbsp; &nbsp;</p><p><br></p><p> &nbsp; &nbsp;</p><p><br></p><p> &nbsp; &nbsp;</p>",
+			"enable_comments": false,
+			"template_name": "",
+			"registration_required": false,
+			"sites": [
+				1
+			]
+		}
+	},
+	{
+		"model": "flatpages.flatpage",
+		"pk": 4,
+		"fields": {
+			"url": "/newbie/flow/",
+			"title": "购物流程",
+			"content": "<p> &nbsp; &nbsp; &nbsp; &nbsp;</p><p>购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程购物流程</p><p><br></p><p> &nbsp; &nbsp;</p>",
+			"enable_comments": false,
+			"template_name": "",
+			"registration_required": false,
+			"sites": [
+				1
+			]
+		}
+	},
+	{
+		"model": "flatpages.flatpage",
+		"pk": 5,
+		"fields": {
+			"url": "/newbie/payment/",
+			"title": "支付方式",
+			"content": "<p> &nbsp; &nbsp; &nbsp; &nbsp;</p><p>支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式支付方式</p><p><br></p><p> &nbsp; &nbsp;</p>",
+			"enable_comments": false,
+			"template_name": "",
+			"registration_required": false,
+			"sites": [
+				1
+			]
+		}
+	},
+	{
+		"model": "flatpages.flatpage",
+		"pk": 6,
+		"fields": {
+			"url": "/serve/return/",
+			"title": "退货政策",
+			"content": "<p> &nbsp; &nbsp; &nbsp; &nbsp;</p><p> &nbsp; &nbsp; &nbsp; &nbsp;退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策退货政策</p><p> &nbsp; &nbsp;</p><p><br></p><p> &nbsp; &nbsp;</p>",
+			"enable_comments": false,
+			"template_name": "",
+			"registration_required": false,
+			"sites": [
+				1
+			]
+		}
+	},
+	{
+		"model": "flatpages.flatpage",
+		"pk": 7,
+		"fields": {
+			"url": "/serve/refund/",
+			"title": "退款流程",
+			"content": "<p> &nbsp; &nbsp; &nbsp; &nbsp;</p><p>退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程退款流程</p><p><br></p><p> &nbsp; &nbsp;</p>",
+			"enable_comments": false,
+			"template_name": "",
+			"registration_required": false,
+			"sites": [
+				1
+			]
+		}
+	}
+]

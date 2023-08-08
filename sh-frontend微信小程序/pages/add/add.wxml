@@ -1,0 +1,65 @@
+
+<form bindsubmit="addGood">
+
+  <view class="title">请输入商品名称</view>
+  <input name="title" value="{{title}}" type="text" class="ipt"/>
+
+  <view class="title">请输入商品价格/元</view>
+  <input name="price" value="{{price}}" type="number" class="ipt"/>
+
+  <view class="title">请输入商品数量</view>
+  <input name="stockNumber" value="{{stockNumber}}" type="number" class="ipt"/>
+
+  <view class="title">请选择商品类型</view>
+  <view class="type-wrap">
+    <block wx:for="{{typeList}}">
+      <view class="type-item {{currentIndex==index?'choose-type':'no-choose'}}" bindtap="getType" data-index="{{index}}">{{item.name}}</view>
+    </block>
+  </view>
+
+  <view class="title">请输入联系方式</view>
+  <input name="contact" value="{{contact}}" type="text" class="ipt"/>
+
+  <view class="title">请输入商品描述内容</view>
+  <textarea name="text" value="{{text}}" class="text-area"></textarea>
+
+  <view class="title">请上传商品封面图片</view>
+  <view class="img-wrap">
+    <block wx:for="{{cover_image}}">
+      <view class="one-img">
+        <image src="/images/close.png" class="close-img" bindtap="deleteCoverImage" data-index="{{index}}"></image>
+        <image class="img-choose" src="{{item}}"></image>
+      </view>
+    </block>
+    <!-- 选择图片 -->
+    <view class="one-img" bindtap="chooseCoverImage" wx:if="{{cover_image.length<1}}">
+      <image class="img-choose" src="/images/add-image.png"></image>
+    </view>
+  </view>
+
+  <view class="title">请上传商品详情图片</view>
+  <view class="img-wrap">
+    <block wx:for="{{detail_image}}">
+      <view class="one-img">
+        <image src="/images/close.png" class="close-img" bindtap="deleteDetailImage" data-index="{{index}}"></image>
+        <image class="img-choose" src="{{item}}"></image>
+      </view>
+    </block>
+    <!-- 选择图片 -->
+    <view class="one-img" bindtap="chooseDetailImage" wx:if="{{detail_image.length<9}}">
+      <image class="img-choose" src="/images/add-image.png"></image>
+    </view>
+  </view>
+  
+
+  <button type="primary" form-type="submit">发布</button>
+  <view style="height: 100rpx;"></view>
+</form>
+
+
+
+
+
+
+
+

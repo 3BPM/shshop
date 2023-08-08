@@ -1,0 +1,38 @@
+
+<block wx:for="{{cartList}}">
+
+  <view class="good-box" bindtap="toGoodDetail" data-id="{{item._id}}">
+    <image wx:if="{{item.choose == true}}" src="/images/choose.png" class="choose-img" catchtap="chooseGood" data-index="{{index}}"></image>
+    <image wx:if="{{item.choose == false}}" src="/images/not_choose.png" class="choose-img" catchtap="chooseGood" data-index="{{index}}"></image>
+    <image src="{{item.cover}}" class="good-img"></image>
+    <view class="good-right">
+      <view>{{item.title}}</view>
+      <view class="good-right-bottom">
+        <view class="good-price">￥{{item.price}}</view>
+        <view class="good-right-bottom">
+          <image src="/images/delete.png" class="add-delete-img" catchtap="reduce" data-index="{{index}}"></image>
+          <view class="type-good-num">{{item.number}}</view>
+          <image src='/images/add.png' class="add-delete-img"  catchtap="add" data-index="{{index}}"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</block>
+
+
+<view class="all-bottom-box">
+  <view class="all-bottom-left" bindtap="chooseAll">  
+    <image wx:if="{{allChoose == true}}" src="/images/choose.png" class="all-choose-img"></image>
+    <image wx:if="{{allChoose == false}}" src="/images/not_choose.png" class="all-choose-img"></image>
+    <view class="all-bottom-left-text">全选</view>
+  </view>
+  <view class="all-bottom-right">
+    <view class="total-price">
+      <text class="total-price-text">合计:</text>
+      <text class="total-price-tag">￥</text>
+      <text class="total-price-money">{{sum}}</text>
+    </view>
+    <view class="total-button" bindtap="toOrder">结算</view>
+  </view>
+</view>

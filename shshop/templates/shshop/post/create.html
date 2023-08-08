@@ -1,0 +1,406 @@
+{% extends 'shshop/base_site.html' %}
+
+{% load static %}
+
+{% block title %}发布商品{% endblock %}
+
+{% block extrastyle %}
+<script src="{% static 'shshop/js/axios.min.js' %}"></script>
+<script src="{% static 'shshop/js/request.js' %}"></script>
+<script src="{% static 'shshop/js/jquery-2.1.1.min.js'%}"></script>
+<script src="{% static 'shadmin/tinymce/tinymce.min.js' %}"></script>
+<style>
+    .input{
+        margin-bottom: 20px;
+    }
+    .head{
+        background-color: #704bd2b8;
+        padding: 10px;
+        margin-top:20px;
+        color: whitesmoke;
+        font-size: 16px;
+    }
+    .area{
+        {#border: 1px solid #d6d6d6;#}
+        padding:10px;
+        margin:10px;
+    }
+    .input-img{
+        width: 60%;
+        max-width: 60%;
+    }
+    .inline-input{
+        max-width: 80px;
+        width: 80px;
+    }
+    .line{
+        width:100%;
+        {#overflow-x: scroll;#}
+
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .line label{
+        line-height: 40px;
+    }
+    .row{
+        padding: 10px;
+        margin: 20px auto;
+        border: 1px solid rgba(189, 147, 249, 0.43);
+        background-color: rgba(214, 214, 214, 0.14);
+    }
+
+    .checkbox{
+        margin-left: 5px;
+    }
+
+
+</style>
+{% endblock %}
+
+{% block breadcrumb %}
+<div class="container">
+    <nav class="breadcrumb is-marginless mt-3 mb-3 is-small" aria-label="breadcrumbs">
+        <ul>
+            <li><a href="{% url 'shshop:home' %}">首页</a></li>
+            <li class="is-active"><a href="#" aria-current="page">发布商品</a></li>
+        </ul>
+    </nav>
+</div>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="is-flex is-flex-direction-column is-align-items-center is-justify-content-center full-height">
+    <div class="box login-box" style="width: 900px;">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="hidden" name="skus" id="skuList" value="0"/>
+            <input type="hidden" name="carousels" id="carouselList" value="0"/>
+            <div class="area">
+                <p class="subtitle head">商品信息</p>
+                {% for field in spu_form %}
+                    {% if field.label == '商品分类' %}
+                        <div class="field">
+                      <label>商品分类</label>
+                      <div class="control">
+                        <div class="b-checkbox-group">
+                    {% for category in categories %}
+                        <label class="checkbox">
+                            <input type="checkbox" name="category" value="{{ category.id }}">
+                            <span>{{ category.name }}</span>
+                        </label>
+
+                    {% endfor %}
+
+                        </div>
+                      </div>
+                    </div>
+                    {% else %}
+                    <div class="form-group">
+                        <label>{{ field.label }}</label>
+                        {{ field }}
+                        <span style="color: red;">{{ field.errors.0 }}</span>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+{#                {{ spu_form }}<br>#}
+            </div>
+            <div class="area">
+                <p class="subtitle head">发布区域</p>
+{#                {{ sku_form }}#}
+                {% comment %}<div class="row">
+                    {% for field in sku_form %}
+                        <span style="margin-left:5px;">
+                            <label>{{ field.label }}:</label>
+                            {{ field }}
+                        </span>
+                    {% endfor %}
+                </div>{% endcomment %}
+                <div class="row">
+                    <div class="field">
+                      <label>发布区域:</label>
+                      <div class="control">
+                        <div class="b-checkbox-group">
+                    {% for option in spec_options %}
+                        <label class="checkbox">
+                            <input type="checkbox" name="option0" value="{{ option.id }}">
+                            <span>{{ option.name }}</span>
+                        </label>
+
+                    {% endfor %}
+
+                        </div>
+                      </div>
+                    </div>
+                    <span style="margin-left:5px;">
+                        <label>封面图:</label>
+                        <input type="file" name="cover0" class="input" accept="image/*" required="" id="id_cover0">
+                    </span>
+                    <div class="line">
+                        <span style="margin-left:5px;">
+                            <label>售价:</label>
+                            <input type="number" name="price0" class="input inline-input" required="" id="id_price0">
+                        </span>
+
+                        <span style="margin-left:5px;">
+                            <label>买入价:</label>
+                            <input type="number" name="cost_price0" class="input inline-input" required="" id="id_cost_price0">
+                        </span>
+
+                        <span style="margin-left:5px;">
+                            <label>原价:</label>
+                            <input type="number" name="org_price0" class="input inline-input" required="" id="id_org_price0">
+                        </span>
+
+                        <span style="margin-left:5px;">
+                            <label>商品数量:</label>
+                            <input type="number" name="stock0" class="input inline-input" required="" id="id_stock0">
+                        </span>
+
+                        <span style="margin-left:5px;">
+                            <label>商品成色:</label>
+                            <input type="text" name="numname0" class="input inline-input" id="id_numname0">
+                        </span>
+
+                        <span style="margin-left:5px;">
+                            <label>重量(KG):</label>
+                            <input type="number" name="weight0" class="input inline-input" id="id_weight0">
+                        </span>
+
+                        <span style="margin-left:5px;">
+                            <label>体积(m³):</label>
+                            <input type="number" name="vol0" class="input inline-input" id="id_vol0">
+                        </span>
+                    </div>
+
+                </div>
+                <!-- 规格模板 -->
+                {% comment %}<div class="sku-template" style="display: none;">
+                    <div class="row">
+
+                        <div class="field">
+                          <label>发布区域:</label>
+                          <div class="control">
+                            <div class="b-checkbox-group">
+                        {% for option in spec_options %}
+                            <label class="checkbox">
+                                <input type="checkbox" name="option__postfix__" value="{{ option.id }}">
+                                <span>{{ option.name }}</span>
+                            </label>
+
+                        {% endfor %}
+
+                            </div>
+                          </div>
+                        </div>
+                        <span style="margin-left:5px;">
+                            <label>封面图:</label>
+                            <input type="file" name="cover__postfix__" class="input" accept="image/*" required="" id="id_cover__postfix__">
+                        </span>
+                        <div class="line">
+                            <span style="margin-left:5px;">
+                                <label>售价:</label>
+                                <input type="number" name="price__postfix__" class="input inline-input" required="" id="id_price__postfix__">
+                            </span>
+
+                            <span style="margin-left:5px;">
+                                <label>成本:</label>
+                                <input type="number" name="cost_price__postfix__" class="input inline-input" required="" id="id_cost_price__postfix__">
+                            </span>
+
+                            <span style="margin-left:5px;">
+                                <label>原价:</label>
+                                <input type="number" name="org_price__postfix__" class="input inline-input" required="" id="id_org_price__postfix__">
+                            </span>
+
+                            <span style="margin-left:5px;">
+                                <label>库存:</label>
+                                <input type="number" name="stock__postfix__" class="input inline-input" required="" id="id_stock__postfix__">
+                            </span>
+
+                            <span style="margin-left:5px;">
+                                <label>商品成色:</label>
+                                <input type="text" name="numname__postfix__" class="input inline-input" id="id_numname__postfix__">
+                            </span>
+
+                            <span style="margin-left:5px;">
+                                <label>重量(KG):</label>
+                                <input type="number" name="weight__postfix__" class="input inline-input" id="id_weight__postfix__">
+                            </span>
+
+                            <span style="margin-left:5px;">
+                                <label>体积(m³):</label>
+                                <input type="number" name="vol__postfix__" class="input inline-input" id="id_vol__postfix__">
+                            </span>
+                        </div>
+
+                        <input type="button" class="button is-danger delete-sku" data="__postfix__" value="移除"/>
+                    </div>
+                </div>{% endcomment %}
+                <div id="sku"></div>
+                <input type="button" id="add-sku" class="button is-info is-light" value="新增商品规格"/>
+            </div>
+
+{#            <div class="area">#}
+{#                <p class="subtitle head">商品轮播图</p>#}
+{#                {{ carousel_form }}#}
+{#            </div>#}
+            <div class="area">
+                <p class="subtitle head">商品轮播图</p>
+
+                <div class="row">
+{#                    <label for="id_img_0">轮播图:</label>#}
+                    <input type="file" name="img_0" class="input input-img" accept="image/*" required="" id="id_img_0">
+                    <input type="button" id="add-carousel" class="button is-info is-light" value="新增轮播图"/>
+                </div>
+
+                <!-- 轮播图模板 -->
+                {% comment %}<div class="carousel-template" style="display: none;">
+                    <div class="row">
+{#                            <label for="img___postfix__">轮播图:</label>#}
+                        <input type="file" name="img___postfix__" class="input input-img" accept="image/*" required="" id="img___postfix__">
+                        <input type="button" class="button is-danger delete-form" data="__postfix__" value="移除"/>
+                    </div>
+                </div>{% endcomment %}
+                <div id="carousel"></div>
+            </div>
+
+
+            <input type="submit" class="button is-primary" value="发布"/>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+{% block vue %}
+<script>
+var skuList=[0];
+var carouselList=[0];
+
+const skuTemplate=`<div class="row">
+
+                        <div class="field">
+                          <label>发布区域:</label>
+                          <div class="control">
+                            <div class="b-checkbox-group">
+                        {% for option in spec_options %}
+                            <label class="checkbox">
+                                <input type="checkbox" name="option__postfix__" value="{{ option.id }}">
+                                <span>{{ option.name }}</span>
+                            </label>
+
+                        {% endfor %}
+
+                            </div>
+                          </div>
+                        </div>
+                        <span style="margin-left:5px;">
+                            <label>封面图:</label>
+                            <input type="file" name="cover__postfix__" class="input" accept="image/*" required="" id="id_cover__postfix__">
+                        </span>
+                        <div class="line">
+                            <span style="margin-left:5px;">
+                                <label>售价:</label>
+                                <input type="number" name="price__postfix__" class="input inline-input" required="" id="id_price__postfix__">
+                            </span>
+
+                            <span style="margin-left:5px;">
+                                <label>成本:</label>
+                                <input type="number" name="cost_price__postfix__" class="input inline-input" required="" id="id_cost_price__postfix__">
+                            </span>
+
+                            <span style="margin-left:5px;">
+                                <label>原价:</label>
+                                <input type="number" name="org_price__postfix__" class="input inline-input" required="" id="id_org_price__postfix__">
+                            </span>
+
+                            <span style="margin-left:5px;">
+                                <label>库存:</label>
+                                <input type="number" name="stock__postfix__" class="input inline-input" required="" id="id_stock__postfix__">
+                            </span>
+
+                            <span style="margin-left:5px;">
+                                <label>商品成色:</label>
+                                <input type="text" name="numname__postfix__" class="input inline-input" id="id_numname__postfix__">
+                            </span>
+
+                            <span style="margin-left:5px;">
+                                <label>重量(KG):</label>
+                                <input type="number" name="weight__postfix__" class="input inline-input" id="id_weight__postfix__">
+                            </span>
+
+                            <span style="margin-left:5px;">
+                                <label>体积(m³):</label>
+                                <input type="number" name="vol__postfix__" class="input inline-input" id="id_vol__postfix__">
+                            </span>
+                        </div>
+
+                        <input type="button" class="button is-danger delete-sku" data="__postfix__" value="移除"/>
+                    </div>`;
+const carouselTemplate=`<div class="row">
+{#                            <label for="img___postfix__">轮播图:</label>#}
+                        <input type="file" name="img___postfix__" class="input input-img" accept="image/*" required="" id="img___postfix__">
+                        <input type="button" class="button is-danger delete-form" data="__postfix__" value="移除"/>
+                    </div>`;
+function update(){
+    $("#skuList").val(skuList.join(','));
+    $("#carouselList").val(carouselList.join(','));
+    console.log(skuList);
+    console.log(carouselList);
+}
+$(document).ready(function() {
+
+    //轮播图动态增删
+  var sku = $('#sku');
+  var addFormBtn1 = $('#add-sku');
+  var formCount1=sku.children().length;
+
+  // 新增表单元素
+  addFormBtn1.click(function() {
+    formCount1 = formCount1+1;
+    {#var newFormHtml = $('.sku-template').html().replace(/__postfix__/g, formCount1);#}
+    var newFormHtml = skuTemplate.replace(/__postfix__/g, formCount1);
+    sku.append(newFormHtml);
+    skuList.push(formCount1);
+    update();
+  });
+
+  // 删除表单元素
+  sku.on('click', '.delete-sku', function() {
+      {#this.preventDefault().stopImmediatePropagation();#}
+    $(this).parent().remove();
+    const d=$(this).attr("data");
+    skuList.splice(skuList.indexOf(d),1);
+    update();
+  });
+
+
+    //轮播图动态增删
+  var carousel = $('#carousel');
+  var addFormBtn2 = $('#add-carousel');
+  var formCount2=carousel.children().length;
+
+  // 新增表单元素
+  addFormBtn2.click(function() {
+    formCount2 = formCount2+1;
+    {#var newFormHtml = $('.carousel-template').html().replace(/__postfix__/g, formCount2);#}
+    var newFormHtml = carouselTemplate.replace(/__postfix__/g, formCount2);
+    carousel.append(newFormHtml);
+    carouselList.push(formCount2);
+    update();
+  });
+
+  // 删除表单元素
+  carousel.on('click', '.delete-form', function() {
+      {#this.preventDefault().stopImmediatePropagation();#}
+    $(this).parent().remove();
+    const d=$(this).attr("data");
+    carouselList.splice(carouselList.indexOf(d),1);
+    update();
+  });
+});
+
+</script>
+{% endblock %}

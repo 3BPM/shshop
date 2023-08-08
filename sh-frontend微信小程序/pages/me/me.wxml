@@ -1,0 +1,47 @@
+<view class="face-wrap" bindtap="toxiugai">
+  <image wx:if="{{!loginOK}}" src="/images/touxiang.png" class="face-img"></image>
+  <image wx:if="{{loginOK}}" src="{{avatar}}" class="face-img"></image>
+  <view wx:if="{{loginOK}}">{{nickname}}</view>
+
+</view>
+<view style="display: flex;flex-direction: row;">
+  <button class="but-login" bindtap="login" wx:if="{{!loginOK}}">登录</button>
+  <button class="but-signup" bindtap="signup" wx:if="{{!loginOK}}">注册</button>
+</view>
+
+
+<view class="order-wrap" wx:if="{{loginOK}}">
+
+  <navigator url="/pages/me/myOders/myOrders?status=0">
+    <image class="type-img" src="/images/waitPut.png"></image>
+    <view>待发货</view>
+  </navigator>
+
+  <navigator url="/pages/me/myOders/myOrders?status=1">
+    <image class="type-img" src="/images/waitGet.png"></image>
+    <view>待收货</view>
+  </navigator>
+
+  <navigator url="/pages/me/myOders/myOrders?status=2">
+    <image class="type-img" src="/images/comment.png"></image>
+    <view>待评价</view>
+  </navigator>
+
+  <navigator url="/pages/me/myOders/myOrders?status=3">
+    <image class="type-img" src="/images/success.png"></image>
+    <view>已完成</view>
+  </navigator>
+
+</view>
+
+
+
+<view class="menu-item" bindtap="toCollect" wx:if="{{loginOK}}">我的收藏</view>
+<view class="menu-item" bindtap="toSellerOrders" wx:if="{{loginOK}}">商家订单</view>
+<view class="menu-item" bindtap="toMyGoods" wx:if="{{loginOK}}">我的商品</view>
+<view class="menu-item" bindtap="tomyArticle" wx:if="{{loginOK}}">我的文章</view>
+  <button class="menu-item" open-type="contact"style="width:100%;background-color: #ffffff;">在线客服</button>
+  <button class="menu-item" open-type="feedback" style="width:100%;background-color: #ffffff;">意见反馈</button>
+
+
+<view class="menu-item" bindtap="loinOut" wx:if="{{loginOK}}">退出登录</view>

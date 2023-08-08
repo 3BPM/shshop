@@ -1,0 +1,31 @@
+/* 商品列表 */
+.good-box {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 20rpx;
+  border: 4rpx solid rgb(231, 231, 231);
+}
+.good-img {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}
+.right-bottom-box {
+  display: flex;
+  flex-direction: row;
+  width: 500rpx;
+  justify-content: space-between;
+}
+.right-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+.price {
+  color: red;
+  font-size: 36rpx;
+}
+.tag {
+  color: #7c7c7c;
+}

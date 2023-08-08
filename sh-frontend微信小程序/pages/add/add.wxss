@@ -1,0 +1,57 @@
+.title {
+  margin: 20rpx;
+  color: #8060f4;
+}
+.ipt {
+  border: 1rpx solid rgb(165, 165, 165);
+  margin: 20rpx;
+}
+.text-area {
+  border: 1rpx solid rgb(165, 165, 165);
+  margin: 20rpx;
+}
+
+/* 分类 */
+.type-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20rpx;
+}
+.type-item {
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 10rpx;
+}
+.choose-type {
+  border: 6rpx solid #8060f4;
+  border-radius: 20rpx;
+}
+.no-choose {
+  border: 6rpx solid #eee;
+  border-radius: 20rpx;
+}
+
+
+/* 图片 */
+.img-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20rpx;
+}
+.img-choose {
+  width: 210rpx;
+  height: 210rpx;
+}
+.one-img {
+  margin: 4rpx 8rpx;
+  position: relative;
+}
+.close-img {
+  position: absolute;
+  right: 4rpx;
+  top: 4rpx;
+  width: 40rpx;
+  height: 40rpx;
+}

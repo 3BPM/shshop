@@ -1,0 +1,32 @@
+<!-- 分类 -->
+<view class="type-wrap">
+  <block wx:for="{{typeList}}">
+    <view class="type-item" bindtap="toTypeDetail" data-id="{{item._id}}">
+      <image src="{{item.image}}" class="type-img"></image>
+      <view>{{item.name}}</view>
+    </view>
+  </block>
+
+  <view class="type-item" bindtap="toNewGood">
+      <image src="/images/new_good.png" class="type-img"></image>
+      <view>新品推荐</view>
+  </view>
+  <view class="type-item" bindtap="toShequ">
+      <image src="/images/shequ.png" class="type-img"></image>
+      <view>社区论坛</view>
+  </view>
+  <view class="type-item" bindtap="toHuishou">
+      <image src="/images/huishou.png" class="type-img"></image>
+      <view>回收</view>
+  </view>
+  <view class="type-item" bindtap="toSP">
+      <image src="/images/type_yes.png" class="type-img"></image>
+      <view>我的商品</view>
+  </view>
+  <view class="type-item" bindtap="toTianbao">
+      <image src="/images/prize_yes.png" class="type-img"></image>
+      <view>填报</view>
+  </view>
+
+</view>
+

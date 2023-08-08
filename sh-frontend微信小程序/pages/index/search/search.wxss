@@ -1,0 +1,65 @@
+/* 搜索 */
+.search-wrap {
+  padding: 0 20rpx 20rpx 20rpx;
+  background-color: #8060f4;
+}
+.search-box {
+
+  display: flex;
+  flex-direction: row;
+  border: 1rpx solid #e6e6e6;
+
+  padding: 0 20rpx;
+  /* border-radius: 20rpx; */
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+}
+.search-img {
+  width: 50rpx;
+  height: 50rpx;
+  background-color: #fff;
+}
+.input-cell {
+  padding: 20rpx 20rpx;
+  width: 600rpx;
+  background-color: #fff;
+}
+
+/* 商品列表 */
+.good-box {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 20rpx;
+  border: 4rpx solid rgb(231, 231, 231);
+}
+.good-img {
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+}
+.right-bottom-box {
+  display: flex;
+  flex-direction: row;
+  width: 500rpx;
+  justify-content: space-between;
+}
+.right-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 10rpx 0;
+}
+.price {
+  color: red;
+  font-size: 36rpx;
+}
+.tag {
+  color: #dddddd;
+}
+
+
+.no-good {
+  margin: 50rpx;
+  text-align: center;
+}

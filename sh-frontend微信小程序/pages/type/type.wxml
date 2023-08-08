@@ -1,0 +1,35 @@
+<view class="type-box">
+
+  <!-- 左半部分 -->
+  <scroll-view scroll-y="true" class="type-left">
+
+    <block wx:for="{{typeList}}">
+      <view bindtap="getTypeGoodsList" data-id="{{item._id}}" data-index="{{index}}" class="{{currentType==index?'choose-type':''}}">{{item.name}}</view>
+    </block>
+
+  </scroll-view>
+
+  <!-- 右半部分 -->
+  <scroll-view scroll-y="true" class="type-ritht">
+
+    <!-- 每一个商品 -->
+
+    <block wx:for="{{goodList}}">
+      <view class="type-good-box" bindtap="toGoodDetail"  data-index="{{item}}">
+        <image src="http://116.63.12.26{{item.cover_pic}}" class="type-good-img"></image>
+        <view class="type-good-right">
+          <view class="type-good-title">
+            <text>{{item.spu.title}}</text>
+          </view>
+          <view class="type-good-tag" wx:if="{{item.saleNumber}}">销量：{{item.saleNumber}}</view>
+          <view class="type-good-tag">库存：{{item.stockNumber}}</view>
+          <view class="bottom-box">
+            <view class="type-good-price">￥{{item.price}}</view>
+          </view>
+        </view>
+      </view>
+    </block>
+
+  </scroll-view>
+
+</view>

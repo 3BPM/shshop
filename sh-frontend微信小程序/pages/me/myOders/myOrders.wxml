@@ -1,0 +1,46 @@
+
+
+
+<view class="menu-wrap">
+  <view class="menu-item {{status==-1?'choose-type':''}}" bindtap="choooType" data-type="-1">待支付</view>
+  <view class="menu-item {{status==0?'choose-type':''}}" bindtap="choooType" data-type="0">待发货</view>
+  <view class="menu-item {{status==1?'choose-type':''}}" bindtap="choooType" data-type="1">待收货</view>
+  <view class="menu-item {{status==2?'choose-type':''}}" bindtap="choooType" data-type="2">待评价</view>
+  <view class="menu-item {{status==3?'choose-type':''}}" bindtap="choooType" data-type="3">已完成</view>
+</view>
+
+
+<block wx:for="{{orderList}}">
+  <view class="order-wrap">
+
+      <view class="oder-id">订单号：{{item._id}}</view>
+      <block wx:for="{{item.goods}}" wx:for-item="good">
+        <view class="good-wrap">
+          <image class="good-img" src="{{good.cover}}"></image>
+          <view>
+            <view>{{good.title}}</view>
+            <view class="good-bottom">
+              <view class="red">￥{{good.price}}</view>
+              <view wx:if="{{item.status!=2 && item.status!=3}}" class="red">X{{good.number}}</view>
+              <view wx:if="{{item.status==2 || item.status==3}}" class="comment" bindtap="toComment" data-id="{{good._id}}" data-title="{{good.title}}" data-orderid="{{item._id}}">评价</view>
+            </view>
+          </view>
+        </view>
+      </block>
+      <view class="total-money">合计：<text class="red">{{item.totalMoney}}</text></view>
+      <view class="line-item">收货地址：{{item.address}}</view>
+      <view class="line-item">收货人：{{item.name}} 电话：{{item.phone}}</view>
+      <view class="line-item" wx:if="{{item.status!=-1}}">卖家联系方式：{{item.goods[0].contact}}</view>
+      <view class="line-item">{{item.time}}</view>
+
+      <view class="but-wrap">
+        <button wx:if="{{item.status==-1}}" size="mini" type="primary" bindtap="pay" data-index="{{index}}">支付</button>
+
+        <button wx:if="{{item.status==0}}" size="mini" type="primary" bindtap="cancel" data-index="{{index}}">取消订单</button>
+
+        <button wx:if="{{item.status==1}}" size="mini" type="primary" bindtap="confirm" data-index="{{index}}">已收货</button>
+
+        
+      </view>
+  </view>
+</block>

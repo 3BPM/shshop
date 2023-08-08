@@ -1,0 +1,20 @@
+{
+  "condition": {
+    "miniprogram": {
+      "list": [
+        {
+          "name": "pages/me/myOders/myOrders",
+          "pathName": "pages/me/myOders/myOrders",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  },
+  "projectname": "new%25E5%25BE%25AE%25E4%25BF%25A1%25E7%2599%25BB%25E5%25BD%2595",
+  "setting": {
+    "compileHotReLoad": true,
+    "urlCheck": false
+  },
+  "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html"
+}

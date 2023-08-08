@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试页面 可以git update可以run一个code</title>
+</head>
+<body>
+    <h1>测试页面 可以git update可以run一个code</h1>
+    <h2>git update:</h2>
+    <a>  subprocess.call(['git','fetch --all'], shell=False)<br>
+        subprocess.call(['git','reset --hard origin/master'], shell=False)<br>
+        subprocess.call(['git','pull'], shell=False)</a>
+        <div class="parent">
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="Run Code">
+    </form>
+    <form method="post">
+        {% csrf_token %}
+        <input type="submit" value="GitUpdate">
+    </form>
+        </div>
+    {% if result %}
+        <h2>Result:</h2>
+        <pre>{{ result }}</pre>
+    {% endif %}
+</body>
+</html>

@@ -1,0 +1,7 @@
+<view class="title">学工号</view>
+<input class="input" bindinput="getZhanghao" class="ipt"></input>
+
+<view class="title">密码</view>
+<input class="input" bindinput="getMima" class="ipt"></input>
+<button bindtap="login" type="primary" >登录</button>
+<button bindtap="qd" type="primary" >签到</button>

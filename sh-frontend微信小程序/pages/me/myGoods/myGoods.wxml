@@ -1,0 +1,14 @@
+
+<!-- 商品列表 -->
+
+<block wx:for="{{goodList}}">
+  <view class="good-box" bindtap="toGoodDetail" data-index="{{item}}">
+    <image src="http://116.63.12.26{{item.cover_pic}}" class="good-img"></image>
+    <view class="right-box">
+      <view style="max-width: 500rpx;">{{item.spu.title}}</view>
+      <view class="right-bottom-box">
+        <view class="price">￥{{item.price}}</view>
+      </view>
+    </view>
+  </view>
+</block>

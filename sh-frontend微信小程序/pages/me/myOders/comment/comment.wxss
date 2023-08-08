@@ -1,0 +1,5 @@
+.comment-text {
+  margin: 20rpx;
+  border: 2rpx solid #eee;
+  padding: 20rpx;
+}

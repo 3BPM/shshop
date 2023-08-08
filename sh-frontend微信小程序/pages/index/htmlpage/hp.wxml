@@ -1,0 +1,3 @@
+<!-- html -->
+<!-- 指向嵌入外部链接的地址 -->
+<web-view src="{{urlvale}}"></web-view>

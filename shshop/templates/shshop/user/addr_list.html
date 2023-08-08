@@ -1,0 +1,16 @@
+{% extends 'shshop/user/userinfo.html' %}
+
+{% load static %}
+
+{% block title %}地址管理{% endblock %}
+
+
+{% block extrastyle %}
+<script src="{% static 'shshop/js/axios.min.js' %}"></script>
+<script src="{% static 'shshop/js/request.js' %}"></script>
+{% endblock %}
+
+
+{% block userinfo_content %}
+    {% include 'shshop/user/address_list.html' %}
+{% endblock %}

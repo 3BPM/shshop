@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="userinfo">
+    <image class="avatar" src="{{avatarUrl}}" mode="aspectFit" bindtap="chooseImage" />
+    <text>点击图片选择新头像</text>
+  </view>
+  <button bindtap="submit">提交</button>
+</view>

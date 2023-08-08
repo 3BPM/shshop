@@ -1,0 +1,81 @@
+{% load flatpages %}
+<footer id="footer" class="footer has-background-black-ter">
+
+    <div class="level-item ">
+        <span class="icon is-large has-text-grey-light mr-1" style="font-size: 3em;">
+            <img src="/media/logo.png"></img></span>
+        <div class="has-text-grey-light">
+            <p class="heading is-size-6">校园二手市场</p>
+            <p class="title has-text-grey-light is-size-5">SecondHand</p>
+        </div>
+    </div>
+    <div class="dropdown-divider has-background-grey-dark"></div>
+    <div class="container">
+        <div class="level is-mobile is-align-items-baseline">
+            <div class="level-item is-flex-direction-column">
+                {% get_flatpages '/about/' as about_pages %}
+                <p class="menu-label">关于我们</p>
+                <ul class="menu-list">
+                    {% for page in about_pages %}
+                    <li><a class="{% if page.url in request.path %} is-active {% endif %}"
+                            href="/pages{{ page.url }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="level-item is-flex-direction-column">
+                {% get_flatpages '/newbie/' as newbie_pages %}
+                <p class="menu-label">新手指南</p>
+                <ul class="menu-list">
+                    {% for page in newbie_pages %}
+                    <li><a class="{% if page.url in request.path %} is-active {% endif %}"
+                            href="/pages{{ page.url }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="level-item is-flex-direction-column">
+                {% get_flatpages '/serve/' as serve_pages %}
+                <p class="menu-label">交易保障</p>
+                <ul class="menu-list">
+                    {% for page in serve_pages %}
+                    <li><a class="{% if page.url in request.path %} is-active {% endif %}"
+                            href="/pages{{ page.url }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="level-item is-flex-direction-column">
+                {% get_flatpages '/faq/' as faq_pages %}
+                <p class=" menu-label">常见问题</p>
+                <ul class="menu-list">
+                    {% for page in faq_pages %}
+                    <li><a class="{% if page.url in request.path %} is-active {% endif %}"
+                            href="/pages{{ page.url }}">{{ page.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="level-item is-flex-direction-column">
+                {% get_flatpages '/faq/' as faq_pages %}
+                <p class=" menu-label">联系我们</p>
+                <ul class="menu-list">
+                    <li><a href="https://gitee.com/bayke/bayke-shop">致敬拜客</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="dropdown-divider has-background-grey-dark"></div>
+        <div class="content has-text-centered has-text-grey-lighter">
+            <p>Copyright 2023 <a class="has-text-grey-lighter has-text-weight-bold"
+                    href="https://gitee.com/rbpm3x/shshop">2023软工第五组SecondHand项目</a>.
+            </p>
+            <p class="is-size-7 has-text-grey-lighter">本程序由<a class="has-text-grey"
+                    href="https://www.djangoproject.com/">django</a>强力驱动.
+
+                <a class="is-size-7 has-text-grey-lighter" href="/sitemap.xml">站点地图</a>
+            </p>
+        </div>
+    </div>
+</footer>

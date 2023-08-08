@@ -1,0 +1,14 @@
+<block wx:for="{{goodList}}">
+  <view class="good-box" bindtap="toGoodDetail" data-id="{{item.goodId}}">
+    <image src="{{item.cover}}" class="good-img"></image>
+
+    <view class="right-box">
+      <view>{{item.title}}</view>
+      <view class="right-bottom-box">
+        <view class="price">￥{{item.price}}</view>
+        <view class="tag" catchtap="cancelCollect" data-id="{{item._id}}">删除</view>
+      </view>
+    </view>
+
+  </view>
+</block>

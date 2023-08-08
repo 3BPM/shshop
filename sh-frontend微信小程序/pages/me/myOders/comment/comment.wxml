@@ -1,0 +1,8 @@
+
+
+<textarea placeholder="请输入评价内容" class="comment-text" maxlength="20" bindinput="getInputValue"></textarea>
+
+
+
+<button type="primary" bindtap="publishComment">提交</button>
+
