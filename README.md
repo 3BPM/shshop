@@ -51,7 +51,7 @@ pip install -r requirements.txt
 > **注意：clone到本地之后，先删除.idea和.vscode文件夹再进行后续操作**
 
 - 配置Mysql数据库
-  sh settings,py里面
+  sh settings.py里面
 
   ```
   DATABASES = {

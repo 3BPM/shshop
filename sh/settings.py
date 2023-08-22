@@ -84,9 +84,9 @@ WSGI_APPLICATION = 'sh.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': "se",  # 数据库名字
+        'NAME': "sh",  # 数据库名字
         # 'NAME': "se",  # 数据库名字
-        "USER": "root",  # 用户名
+        "USER": "se",  # 用户名
        # "PASSWORD":"123456",
         "PASSWORD":"bhshm418",
         "HOST": "localhost",  # ip
