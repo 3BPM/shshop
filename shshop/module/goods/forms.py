@@ -63,9 +63,9 @@ class ShShopSPUForm(forms.ModelForm):
         self.fields["ops"].choices = self.get_ops()
 
     def get_ops(self):
-        africa_countries = []
-        # africa_countries =  [(s.id, s.name) for s in ShShopCategory.objects.all()]
-        return africa_countries
+        ops = []
+        ops = [(s.id, s.name) for s in ShShopCategory.objects.all()]
+        return ops
 
     # def save(self, commit=True):
     #     instance = super().save(commit=False)
@@ -173,9 +173,9 @@ class ShShopSKUForm(forms.ModelForm):
         self.fields["ops"].choices = self.get_ops()
 
     def get_ops(self):
-        africa_countries = []
-        # africa_countries =  [(s.id, s.name) for s in ShShopSpecOption.objects.all()]
-        return africa_countries
+        ops = []
+        ops = [(s.id, s.name) for s in ShShopSpecOption.objects.all()]
+        return ops
 
     def clean(self):
         cleaned_data = super().clean()

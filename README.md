@@ -93,6 +93,14 @@ Restricted`
 python manage.py makemigrations
 python manage.py migrate
 ```
+还有一个问题 如果migration报错
+请先删掉shshop/migrations里面的文件，并注释掉/shshop/module/good/forms.py中两个 ops = [(s.id, s.name)...........
+```python
+def get_ops(self):
+  ops = []
+  #ops = [(s.id, s.name) for s in ShShopCategory.objects.all()]
+```
+再进行migrate migrate后再取消注释，这部分的绕开migration检查没有做好。
 
 ### 创建超级管理员&&初始化项目
 
@@ -100,14 +108,14 @@ python manage.py migrate
 python manage.py createsuperuser
 python manage.py push
 python manage.py push -test
-python manage.py push -nb
+#python manage.py push -nb
 #pushnb 这条命令要保证上一个环境生成并拷过来的/1.json的正确性
 #python manage.py dumpdata myapp --output=1.json
 #python manage.py dumpdata myapp --natural-foreign --natural-primary --output=1.json
 #python manage.py dumpdata myapp.MyModel --format=yaml --output=mydata.yaml
 ```
 
-目前未实现 没啥用。。。
+
 
 ### 运行项目
 
@@ -145,14 +153,13 @@ kill -9
 ### 查看项目
 
 前端
-http://116.63.12.26
+Vue
 
-后台：
-[登录 | 二手商城](http://116.63.12.26/shadmin/)
+
 
 文档
 
-[接口测试平台API文档](http://116.63.12.26/docs)
+[接口测试平台API文档] : /docs
 
 后台账号及密码是你在第五步创建的！
 
@@ -163,8 +170,8 @@ https://git.weixin.qq.com/wx_wx897244a5a4ecf9f0/sh-frontend
 
 ### 包含一个drf教程
 
-http://116.63.12.26/media/drf.html
+/media/drf.html
 
-### 包含一个cloudflare 和莫脚本建的伪站
+### 包含一个感谢Azure和cloudflare的站点
 
 https://www.mingzr.eu.org/
