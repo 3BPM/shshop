@@ -123,6 +123,40 @@ python manage.py push -test
 python manage.py runserver 0:80
 ```
 
+uwsgi 配置
+uwsgi支持ini、xml等多种配置方式，本文以 ini 为例， 在目录下新建uwsgi.ini，添加如下配置：
+```
+[uwsgi]
+socket = 127.0.0.1:9090
+module = shshop.wsgi:application
+master = true
+processes = 4
+chmod-socket = 666
+vacuum = true
+
+```
+Nginx 配置
+找到nginx的安装目录（如：/usr/local/nginx/  /etc/nginx/conf.d/www.mingzr.eu.org.conf ），打开conf/nginx.conf文件，修改server配置：
+```
+server {
+        listen       80;
+        server_name  localhost;
+
+        location / {
+            include  uwsgi_params;
+            uwsgi_pass  127.0.0.1:9090;
+        }
+    }
+  ```
+你可以阅读 Nginx 安装配置 了解更多内容。
+
+设置完成后，在终端运行：
+```
+uwsgi --ini uwsgi.ini &
+/usr/local/nginx/sbin/nginx #centos
+uwsgi --ini uwsgi.ini &
+ /usr/sbin/nginx
+````
 ### 云端常用操作
 
 ```
