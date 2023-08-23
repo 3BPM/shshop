@@ -161,6 +161,7 @@ https://blog.csdn.net/nilmao/article/details/123467932
 设置完成后，在终端运行：
 python manage.py collectstatic
 ```
+sudo pkill -f uwsgi -9
 uwsgi --ini uwsgi.ini &
 
 ````
