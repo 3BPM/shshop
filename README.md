@@ -157,7 +157,7 @@ server {
 
 https://blog.csdn.net/qq_16033847/article/details/100857427
 https://blog.csdn.net/nilmao/article/details/123467932
-
+https://blog.csdn.net/m0_37780940/article/details/119965539
 设置完成后，在终端运行：
 python manage.py collectstatic
 ```
@@ -169,7 +169,8 @@ uwsgi --ini uwsgi.ini &
 
 ```
 nginx
-systemctl status nginx.service
+vi /etc/nginx/conf.d/www.mingzr.eu.org.conf
+systemctl restart nginx.service
 cat /var/log/nginx/error.log
 
 #查看端口占用

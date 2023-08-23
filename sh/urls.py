@@ -22,15 +22,15 @@ from shshop.public.sites import sh_site
 from rest_framework.documentation import include_docs_urls
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('shadmin/', sh_site.urls),
-    path('', include('shshop.urls')),
-    path('pages/', include('django.contrib.flatpages.urls')),
-    path('api/', include('api.urls')),
-    #3. coreapi文档路径
-    path('docs/', include_docs_urls(title="接口测试平台API文档", description="这个是接口平台的文档")),
+    path("admin/", admin.site.urls),
+    path("shadmin/", sh_site.urls),
+    path("", include("shshop.urls")),
+    path("pages/", include("django.contrib.flatpages.urls")),
+    path("api/", include("api.urls")),
+    # 3. coreapi文档路径
+    path("docs/", include_docs_urls(title="接口测试平台API文档", description="这个是接口平台的文档")),
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
-]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
