@@ -1,0 +1,696 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <!-- Start book Django课程讲义 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>路由Router | Django课程讲义</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="Big">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../C05-Components/index.html" />
+    
+    
+    <link rel="prev" href="../C04-View/ViewSet.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="4.5"
+        data-chapter-title="路由Router"
+        data-filepath="C04-View/Routers.md"
+        data-basepath=".."
+        data-revision="Mon Jun 18 2018 11:45:01 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        课程介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="C01-IntroduceToDRF/index.html">
+            
+                
+                    <a href="../C01-IntroduceToDRF/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        引入DjangoRESTframework
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="C01-IntroduceToDRF/SeparatedFrontendAndBackend.html">
+            
+                
+                    <a href="../C01-IntroduceToDRF/SeparatedFrontendAndBackend.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        Web应用模式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="C01-IntroduceToDRF/IntroduceToREST.html">
+            
+                
+                    <a href="../C01-IntroduceToDRF/IntroduceToREST.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        认识RESTful
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="C01-IntroduceToDRF/HowToDesignREST.html">
+            
+                
+                    <a href="../C01-IntroduceToDRF/HowToDesignREST.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        RESTful设计方法
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="C01-IntroduceToDRF/DevelopRESTAPIWithDjango.html">
+            
+                
+                    <a href="../C01-IntroduceToDRF/DevelopRESTAPIWithDjango.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        使用Django开发REST接口
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="C01-IntroduceToDRF/CoreTaskToDevelopRESTAPI.html">
+            
+                
+                    <a href="../C01-IntroduceToDRF/CoreTaskToDevelopRESTAPI.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        明确REST接口开发的核心任务
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="C01-IntroduceToDRF/AboutDRF.html">
+            
+                
+                    <a href="../C01-IntroduceToDRF/AboutDRF.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.6.</b>
+                        
+                        DjangoRESTframework简介
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="C02-DRFProject/index.html">
+            
+                
+                    <a href="../C02-DRFProject/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        DRF工程搭建
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="C02-DRFProject/InstallAndConfig.html">
+            
+                
+                    <a href="../C02-DRFProject/InstallAndConfig.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        环境安装与配置
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="C03-Serializer/index.html">
+            
+                
+                    <a href="../C03-Serializer/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Serializer序列化器
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="C03-Serializer/Declaring.html">
+            
+                
+                    <a href="../C03-Serializer/Declaring.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        定义Serializer
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="C03-Serializer/Serializing.html">
+            
+                
+                    <a href="../C03-Serializer/Serializing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        序列化使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="C03-Serializer/Deserializing.html">
+            
+                
+                    <a href="../C03-Serializer/Deserializing.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        反序列化使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="C03-Serializer/ModelSerializer.html">
+            
+                
+                    <a href="../C03-Serializer/ModelSerializer.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        模型类序列化器ModelSerializer
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="C04-View/index.html">
+            
+                
+                    <a href="../C04-View/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        视图
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="C04-View/RequestAndResponse.html">
+            
+                
+                    <a href="../C04-View/RequestAndResponse.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Request与Response
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="C04-View/View.html">
+            
+                
+                    <a href="../C04-View/View.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        视图概览
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="C04-View/ViewIntroduction.html">
+            
+                
+                    <a href="../C04-View/ViewIntroduction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        视图说明
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="C04-View/ViewSet.html">
+            
+                
+                    <a href="../C04-View/ViewSet.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        视图集ViewSet
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="4.5" data-path="C04-View/Routers.html">
+            
+                
+                    <a href="../C04-View/Routers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        路由Router
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="C05-Components/index.html">
+            
+                
+                    <a href="../C05-Components/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        其他功能
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="C05-Components/Authentication.html">
+            
+                
+                    <a href="../C05-Components/Authentication.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        认证
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="C05-Components/Permissions.html">
+            
+                
+                    <a href="../C05-Components/Permissions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        权限
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="C05-Components/Throttling.html">
+            
+                
+                    <a href="../C05-Components/Throttling.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        限流
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="C05-Components/Filtering.html">
+            
+                
+                    <a href="../C05-Components/Filtering.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.4.</b>
+                        
+                        过滤
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="C05-Components/Ordering.html">
+            
+                
+                    <a href="../C05-Components/Ordering.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.5.</b>
+                        
+                        排序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.6" data-path="C05-Components/Pagination.html">
+            
+                
+                    <a href="../C05-Components/Pagination.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.6.</b>
+                        
+                        分页
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.7" data-path="C05-Components/Exceptions.html">
+            
+                
+                    <a href="../C05-Components/Exceptions.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.7.</b>
+                        
+                        异常处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.8" data-path="C05-Components/Documents.html">
+            
+                
+                    <a href="../C05-Components/Documents.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.8.</b>
+                        
+                        自动生成接口文档
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Django课程讲义</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x8DEF;&#x7531;routers">&#x8DEF;&#x7531;Routers</h1>
+<p>&#x5BF9;&#x4E8E;&#x89C6;&#x56FE;&#x96C6;ViewSet&#xFF0C;&#x6211;&#x4EEC;&#x9664;&#x4E86;&#x53EF;&#x4EE5;&#x81EA;&#x5DF1;&#x624B;&#x52A8;&#x6307;&#x660E;&#x8BF7;&#x6C42;&#x65B9;&#x5F0F;&#x4E0E;&#x52A8;&#x4F5C;action&#x4E4B;&#x95F4;&#x7684;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;&#x5916;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Routers&#x6765;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x5FEB;&#x901F;&#x5B9E;&#x73B0;&#x8DEF;&#x7531;&#x4FE1;&#x606F;&#x3002;</p>
+<p>REST framework&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;router</p>
+<ul>
+<li><strong>SimpleRouter</strong></li>
+<li><strong>DefaultRouter</strong></li>
+</ul>
+<h2 id="1--&#x4F7F;&#x7528;&#x65B9;&#x6CD5;">1.  &#x4F7F;&#x7528;&#x65B9;&#x6CD5;</h2>
+<p>1&#xFF09; &#x521B;&#x5EFA;router&#x5BF9;&#x8C61;&#xFF0C;&#x5E76;&#x6CE8;&#x518C;&#x89C6;&#x56FE;&#x96C6;&#xFF0C;&#x4F8B;&#x5982;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> rest_framework <span class="hljs-keyword">import</span> routers
+
+router = routers.SimpleRouter()
+router.register(<span class="hljs-string">r&apos;books&apos;</span>, BookInfoViewSet, base_name=<span class="hljs-string">&apos;book&apos;</span>)
+</code></pre>
+<p>register(prefix, viewset, base_name)</p>
+<ul>
+<li>prefix  &#x8BE5;&#x89C6;&#x56FE;&#x96C6;&#x7684;&#x8DEF;&#x7531;&#x524D;&#x7F00;</li>
+<li>viewset  &#x89C6;&#x56FE;&#x96C6;</li>
+<li>base_name  &#x8DEF;&#x7531;&#x540D;&#x79F0;&#x7684;&#x524D;&#x7F00;</li>
+</ul>
+<p>&#x5982;&#x4E0A;&#x8FF0;&#x4EE3;&#x7801;&#x4F1A;&#x5F62;&#x6210;&#x7684;&#x8DEF;&#x7531;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-python">^books/$    name: book-list
+^books/{pk}/$   name: book-detail
+</code></pre>
+<p>2&#xFF09;&#x6DFB;&#x52A0;&#x8DEF;&#x7531;&#x6570;&#x636E;</p>
+<p>&#x53EF;&#x4EE5;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x5F0F;&#xFF1A;</p>
+<pre><code class="lang-python">urlpatterns = [
+    ...
+]
+urlpatterns += router.urls
+</code></pre>
+<p>&#x6216;</p>
+<pre><code class="lang-python">urlpatterns = [
+    ...
+    url(<span class="hljs-string">r&apos;^&apos;</span>, include(router.urls))
+]
+</code></pre>
+<h2 id="2--&#x89C6;&#x56FE;&#x96C6;&#x4E2D;&#x5305;&#x542B;&#x9644;&#x52A0;action&#x7684;">2.  &#x89C6;&#x56FE;&#x96C6;&#x4E2D;&#x5305;&#x542B;&#x9644;&#x52A0;action&#x7684;</h2>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BookInfoViewSet</span><span class="hljs-params">(mixins.ListModelMixin, mixins.RetrieveModelMixin, GenericViewSet)</span>:</span>
+    queryset = BookInfo.objects.all()
+    serializer_class = BookInfoSerializer
+
+<span class="hljs-decorator">    @action(methods=[&apos;get&apos;], detail=False)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">latest</span><span class="hljs-params">(self, request)</span>:</span>
+        ...
+
+<span class="hljs-decorator">    @action(methods=[&apos;put&apos;], detail=True)</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">read</span><span class="hljs-params">(self, request, pk)</span>:</span>
+        ...
+</code></pre>
+<p>&#x6B64;&#x89C6;&#x56FE;&#x96C6;&#x4F1A;&#x5F62;&#x6210;&#x7684;&#x8DEF;&#x7531;&#xFF1A;</p>
+<pre><code class="lang-python">^books/latest/$    name: book-latest
+^books/{pk}/read/$  name: book-read
+</code></pre>
+<h3 id="3--&#x8DEF;&#x7531;router&#x5F62;&#x6210;url&#x7684;&#x65B9;&#x5F0F;">3.  &#x8DEF;&#x7531;router&#x5F62;&#x6210;URL&#x7684;&#x65B9;&#x5F0F;</h3>
+<p>1&#xFF09; SimpleRouter</p>
+<p><img src="../images/simple_router.png" alt="SimpleRouter"></p>
+<p>2&#xFF09;DefaultRouter</p>
+<p><img src="../images/default_router.png" alt="DefaultRouter"></p>
+<p>DefaultRouter&#x4E0E;SimpleRouter&#x7684;&#x533A;&#x522B;&#x662F;&#xFF0C;DefaultRouter&#x4F1A;&#x591A;&#x9644;&#x5E26;&#x4E00;&#x4E2A;&#x9ED8;&#x8BA4;&#x7684;API&#x6839;&#x89C6;&#x56FE;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5305;&#x542B;&#x6240;&#x6709;&#x5217;&#x8868;&#x89C6;&#x56FE;&#x7684;&#x8D85;&#x94FE;&#x63A5;&#x54CD;&#x5E94;&#x6570;&#x636E;&#x3002; </p>
+<footer class="page-footer"><span class="copyright">powered by Gitbook</span><span class="footer-modification">File Modify: 
+2018-06-13 12:34:01
+</span></footer>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../C04-View/ViewSet.html" class="navigation navigation-prev " aria-label="Previous page: 视图集ViewSet"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../C05-Components/index.html" class="navigation navigation-next " aria-label="Next page: 其他功能"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"disqus":{"shortName":"gitbookuse"},"github":{"url":"https://github.com/dododream"},"search-pro":{"cutWordLib":"nodejieba","defineWord":["gitbook-use"]},"sharing":{"weibo":true,"facebook":true,"twitter":true,"google":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"baidu":{"token":"ff100361cdce95dd4c8fb96b4009f7bc"},"sitemap":{"hostname":"http://www.treenewbee.top"},"donate":{"wechat":"http://weixin.png","alipay":"http://alipay.png","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"edit-link":{"base":"https://github.com/dododream/edit","label":"Edit This Page"},"tbfed-pagefooter":{},"splitter":{},"toggle-chapters":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book Django课程讲义 -->
+</html>

@@ -128,15 +128,18 @@ uwsgi支持ini、xml等多种配置方式，本文以 ini 为例， 在目录下
 ```
 [uwsgi]
 socket = 127.0.0.1:9090
-module = shshop.wsgi:application
+wsgi-file=/root/shshop/sh/wsgi.py
 master = true
 processes = 4
 chmod-socket = 666
 vacuum = true
+chdir = /root/shshop
 
 ```
 Nginx 配置
-找到nginx的安装目录（如：/usr/local/nginx/  /etc/nginx/conf.d/www.mingzr.eu.org.conf ），打开conf/nginx.conf文件，修改server配置：
+/usr/local/nginx/sbin/nginx #centos
+ /usr/sbin/nginx#ubuntu
+找到nginx的conf目录（如 /etc/nginx/conf.d/www.mingzr.eu.org.conf ），打开conf/nginx.conf文件，修改server配置：
 ```
 server {
         listen       80;
@@ -146,20 +149,28 @@ server {
             include  uwsgi_params;
             uwsgi_pass  127.0.0.1:9090;
         }
+        location /tutorial {alias /root/shshop/media/tutorial/;}
     }
   ```
 你可以阅读 Nginx 安装配置 了解更多内容。
+参考：
+
+https://blog.csdn.net/qq_16033847/article/details/100857427
+https://blog.csdn.net/nilmao/article/details/123467932
 
 设置完成后，在终端运行：
+python manage.py collectstatic
 ```
 uwsgi --ini uwsgi.ini &
-/usr/local/nginx/sbin/nginx #centos
-uwsgi --ini uwsgi.ini &
- /usr/sbin/nginx
+
 ````
 ### 云端常用操作
 
 ```
+nginx
+systemctl status nginx.service
+cat /var/log/nginx/error.log
+
 #查看端口占用
 netstat -antulp | grep 80
 #云端运行
@@ -167,6 +178,7 @@ nohup python manage.py runserver 0:80 >djangolog
 查看进程PID
 ps -ef |grep nohup
 ps -ef |grep python
+ps -ef |grep uwsgi
 #强制终止，死循环或无响应状态也能够终止它。
 kill -9
 ```
@@ -204,7 +216,7 @@ https://git.weixin.qq.com/wx_wx897244a5a4ecf9f0/sh-frontend
 
 ### 包含一个drf教程
 
-/media/drf.html
+https://www.mingzr.eu.org/tutorial/drf.html
 
 ### 包含一个感谢Azure和cloudflare的站点
 
