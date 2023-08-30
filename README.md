@@ -86,7 +86,9 @@ pip install -r requirements.txt
 输入get-ExecutionPolicy（如果返回Restriced，则继续下述的步骤）
 输入set-ExecutionPolicy RemoteSigned
 输入Y按下回车
-效果：`PS C:\windows\system32> Get-ExecutionPolicy
+效果：
+
+`PS C:\windows\system32> Get-ExecutionPolicy
 Restricted`
 
 ```bash
@@ -209,7 +211,7 @@ Vue
 
 [接口测试平台API文档] : /docs
 
-后台账号及密码是你在第五步创建的！
+后台账号及密码是你在第五步创建的！普通用户需要使用管理员用户给予其文章权限才可以发表文章。此处还有些小问题在开发中。。。
 
 ```
 https://git.weixin.qq.com/wx_wx897244a5a4ecf9f0/sh-frontend
@@ -218,7 +220,7 @@ https://git.weixin.qq.com/wx_wx897244a5a4ecf9f0/sh-frontend
 
 ### 包含一个drf教程
 
-https://www.mingzr.eu.org/tutorial/drf.html
+https://www.mingzr.eu.org/media/tutorial/drf.html
 
 ### 包含一个感谢Azure和cloudflare的站点
 
