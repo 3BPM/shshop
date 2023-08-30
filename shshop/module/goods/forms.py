@@ -60,7 +60,7 @@ class ShShopSPUForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.owner = kwargs.pop("owner", None)
         super().__init__(*args, **kwargs)
-        self.fields["ops"].choices = self.get_ops()
+        self.ops = self.get_ops()
 
     def get_ops(self):
         ops = []
@@ -170,7 +170,7 @@ class ShShopSKUForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         self.spu = kwargs.pop("spu", None)
         super().__init__(*args, **kwargs)
-        self.fields["ops"].choices = self.get_ops()
+        self.ops = self.get_ops()
 
     def get_ops(self):
         ops = []
