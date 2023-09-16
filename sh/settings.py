@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.sitemaps",
     "shshop.apps.ShshopConfig",
     "rest_framework",
+    "videos",
     "rest_framework.authtoken",
 ]
 
